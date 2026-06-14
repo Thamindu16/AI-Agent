@@ -1,18 +1,16 @@
 from tools import add, subtract, multiply, divide
 
-def execute_tool(tool_name):
+tools = {
+    "add": add,
+    "subtract": subtract,
+    "multiply": multiply,
+    "divide": divide
+}
 
-    if tool_name == "add":
-        return add()
 
-    elif tool_name == "subtract":
-        return subtract()
+def execute_tool(tool_name, num1, num2):
 
-    elif tool_name == "multiply":
-        return multiply()
+    if tool_name in tools:
+        return tools[tool_name](num1, num2)
 
-    elif tool_name == "divide":
-        return divide()
-
-    else:
-        return "Tool not found"
+    return "Tool not found"

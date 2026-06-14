@@ -1,16 +1,22 @@
+commands = {
+    "add": "add",
+    "plus": "add",
+
+    "subtract": "subtract",
+    "minus": "subtract",
+
+    "multiply": "multiply",
+    "times": "multiply",
+
+    "divide": "divide"
+}
+
+
 def decide(user_input):
 
-    if "add" in user_input:
-        return "add"
+    user_input = user_input.lower()
 
-    elif "subtract" in user_input:
-        return "subtract"
+    if user_input in commands:
+        return commands[user_input]
 
-    elif "multiply" in user_input:
-        return "multiply"
-
-    elif "divide" in user_input:
-        return "divide"
-
-    else:
-        return "unknown"
+    return "unknown"

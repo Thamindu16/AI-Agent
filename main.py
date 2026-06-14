@@ -12,8 +12,18 @@ while True:
         print("Goodbye!")
         break
 
-    tool = decide(user_input)
+    parts = user_input.split()
 
-    response = execute_tool(tool)
+    if len(parts) != 3:
+        print("Invalid format")
+        continue
+
+    command = parts[0]
+    num1 = float(parts[1])
+    num2 = float(parts[2])
+
+    tool = decide(command)
+
+    response = execute_tool(tool, num1, num2)
 
     print("Agent:", response)
