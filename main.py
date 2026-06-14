@@ -1,10 +1,19 @@
 from decision import decide
 from action import execute_tool
 
-user_input = input("You: ")
+print("AI Agent Started")
+print("Type 'exit' to quit")
 
-tool = decide(user_input)
+while True:
 
-response = execute_tool(tool)
+    user_input = input("You: ")
 
-print("Agent:", response)
+    if user_input.lower() == "exit":
+        print("Goodbye!")
+        break
+
+    tool = decide(user_input)
+
+    response = execute_tool(tool)
+
+    print("Agent:", response)
