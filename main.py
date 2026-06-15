@@ -49,6 +49,17 @@ while True:
 
         response = execute_tool(tool)
 
+    # Remove task
+    elif tool == "remove_task":
+
+        if len(parts) != 2:
+            print("Invalid Format")
+            continue
+
+        task_number = int(parts[1])
+
+        response = execute_tool(tool, task_number)
+
     # Unknown command
     else:
 
