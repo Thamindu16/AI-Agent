@@ -14,16 +14,44 @@ while True:
 
     parts = user_input.split()
 
-    if len(parts) != 3:
-        print("Invalid format")
+    if len(parts) == 0:
         continue
 
     command = parts[0]
-    num1 = float(parts[1])
-    num2 = float(parts[2])
 
     tool = decide(command)
 
-    response = execute_tool(tool, num1, num2)
+    # Calculator tools
+    if tool in ["add", "subtract", "multiply", "divide"]:
+
+        if len(parts) != 3:
+            print("Invalid format")
+            continue
+
+        num1 = float(parts[1])
+        num2 = float(parts[2])
+
+        response = execute_tool(tool, num1, num2)
+
+    # Add task
+    elif tool == "add_task":
+
+        if len(parts) < 2:
+            print("Please enter a task.")
+            continue
+
+        task = " ".join(parts[1:])
+
+        response = execute_tool(tool, task)
+
+    # View tasks
+    elif tool == "view_tasks":
+
+        response = execute_tool(tool)
+
+    # Unknown command
+    else:
+
+        response = "Unknown command"
 
     print("Agent:", response)

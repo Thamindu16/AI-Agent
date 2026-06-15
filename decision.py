@@ -8,7 +8,9 @@ commands = {
     "multiply": "multiply",
     "times": "multiply",
 
-    "divide": "divide"
+    "divide": "divide",
+    "add_task": "add_task",
+    "view_tasks": "view_tasks"
 }
 
 

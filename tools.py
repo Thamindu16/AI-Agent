@@ -16,3 +16,44 @@ def divide(num1, num2):
         return "Cannot divide by zero"
 
     return round(num1 / num2, 2)
+
+
+
+from memory import load_tasks, save_tasks
+
+def add_task(task):
+
+    tasks = load_tasks()
+    tasks.append(task)
+    save_tasks(tasks)
+
+    return "Task added successfully."
+
+
+def view_tasks():
+
+    tasks = load_tasks()
+
+    if len(tasks) == 0:
+        return "No tasks found."
+
+    output = ""
+
+    for i, task in enumerate(tasks, start=1):
+        output += f"{i}. {task}\n"
+
+    return output
+
+
+def remove_task(index):
+
+    tasks = load_tasks()
+
+    if index < 1 or index > len(tasks):
+        return "Invalid task number."
+
+    tasks.pop(index - 1)
+
+    save_tasks(tasks)
+
+    return "Task removed successfully."
