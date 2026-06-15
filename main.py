@@ -60,6 +60,29 @@ while True:
 
         response = execute_tool(tool, task_number)
 
+    # Remember information
+    elif tool == "remember":
+
+        if len(parts) < 3:
+            print("Invalid format")
+            continue
+
+        key = parts[1]
+        value = " ".join(parts[2:])
+
+        response = execute_tool(tool, key, value)
+
+    # Recall information
+    elif tool == "recall":
+
+        if len(parts) != 2:
+            print("Invalid format")
+        continue
+
+        key = parts[1]
+
+        response = execute_tool(tool, key)
+
     # Unknown command
     else:
 

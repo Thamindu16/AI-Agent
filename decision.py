@@ -11,7 +11,9 @@ commands = {
     "divide": "divide",
     "add_task": "add_task",
     "view_tasks": "view_tasks",
-    "remove_task": "remove_task"
+    "remove_task": "remove_task",
+    "remember": "remember",
+    "recall": "recall"
 }
 
 

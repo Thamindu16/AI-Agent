@@ -19,7 +19,7 @@ def divide(num1, num2):
 
 
 
-from memory import load_tasks, save_tasks
+from memory import load_tasks, save_tasks, load_memory, save_memory
 
 def add_task(task):
 
@@ -57,3 +57,24 @@ def remove_task(index):
     save_tasks(tasks)
 
     return "Task removed successfully."
+
+
+def remember(key, value):
+
+    memory = load_memory()
+
+    memory[key] = value
+
+    save_memory(memory)
+
+    return "Memory saved successfully."
+
+
+def recall(key):
+
+    memory = load_memory()
+
+    if key in memory:
+        return memory[key]
+
+    return "I don't know."
