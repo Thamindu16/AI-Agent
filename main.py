@@ -74,10 +74,11 @@ while True:
 
     # Recall information
     elif tool == "recall":
+        # print("Tool =", tool)
 
         if len(parts) != 2:
             print("Invalid format")
-        continue
+            continue
 
         key = parts[1]
 

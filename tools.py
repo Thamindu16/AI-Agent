@@ -78,3 +78,16 @@ def recall(key):
         return memory[key]
 
     return "I don't know."
+
+# def recall(key):
+
+#     print("Recall function called")
+
+#     memory = load_memory()
+
+#     print(memory)
+
+#     if key in memory:
+#         return memory[key]
+
+#     return "I don't know."
